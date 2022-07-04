@@ -1,5 +1,3 @@
-from tabnanny import verbose
-from tkinter import CASCADE
 from django.db import models
 
 class Cars(models.Model):

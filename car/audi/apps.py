@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class AudicarConfig(AppConfig):
+class AudiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'audiCar'
+    name = 'audi'
     verbose_name = 'Автомобили'
