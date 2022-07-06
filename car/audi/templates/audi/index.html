@@ -26,13 +26,23 @@
                 <div class="card-header">
                   Категория: {{ item.category }}
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">{{ item.title }}</h5>
-                  {% autoescape off %}
-                  <p class="card-text">{{ item.content }}</p>
-                  {% endautoescape %}
-                  <a href="#" class="btn btn-primary">Read more...</a>
+                <div class="media">
+                  {% if item.photo %}
+                    <img src="{{ item.photo.url }}" alt="" width="100px" height="100px">
+                  {% else %}
+                    <img src="https://picsum.photos/200/300/?blur=2" alt=""  width="100px" height="100px">
+                  {% endif %}
+                  <div class="media-body">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ item.title }}</h5>
+                      {% autoescape off %}
+                      <p class="card-text">{{ item.content | linebreaks }}</p>
+                      {% endautoescape %}
+                      <a href="#" class="btn btn-primary">Read more...</a>
+                    </div>
+                  </div>
                 </div>
+                
                 <div class="card-footer text-muted">
                     {{ item.created_at | date:"Y-m-d" }}
                 </div>
